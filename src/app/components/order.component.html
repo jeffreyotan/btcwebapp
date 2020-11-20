@@ -1,0 +1,38 @@
+<div color="accent">
+    <form [formGroup]="form">
+        <mat-divider></mat-divider>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>
+                    <span>{{operation}}</span>
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div fxLayout="row" fxLayoutAlign="end">
+                    <mat-form-field>
+                        <mat-label>Order Date</mat-label>
+                        <input matInput [matDatepicker]="orderDatePicker" formControlName="orderDate" [min]="today">
+                        <mat-datepicker-toggle matPrefix [for]="orderDatePicker"></mat-datepicker-toggle>
+                        <mat-datepicker #orderDatePicker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayoutGap="2vw">
+                    <mat-form-field>
+                        <mat-label>Name</mat-label>
+                        <input matInput formControlName="name">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Contact No.</mat-label>
+                        <input matInput formControlName="phone">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Date of Birth</mat-label>
+                        <input matInput [matDatepicker]="dobPicker" formControlName="dateOfBirth" [max]="today">
+                        <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
+                        <mat-datepicker #dobPicker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </form>
+</div>

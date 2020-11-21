@@ -9,7 +9,8 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 })
 export class OrderComponent implements OnInit {
 
-  operation = "Buy BTC/SGD";
+  opType: string = "Buy";
+  operation: string = this.opType + " BTC/SGD";
 
   form: FormGroup;
   today = new Date();
@@ -23,8 +24,20 @@ export class OrderComponent implements OnInit {
       orderDate: this.fb.control('', [ Validators.required ]),
       name: this.fb.control('', [ Validators.required ]),
       phone: this.fb.control('', [ Validators.required, Validators.minLength(8), Validators.maxLength(16) ]),
-      dateOfBirth: this.fb.control('', [ Validators.required ])
+      dateOfBirth: this.fb.control('', [ Validators.required ]),
+      gender: this.fb.control('', [ Validators.requiredTrue ]),
+      orderType: this.fb.control('', [ Validators.requiredTrue ])
     });
+  }
+
+  onClickBuy(): void {
+    this.opType = "Buy";
+    this.operation = this.opType + " BTC/SGD"; // for now, let's just duplicate
+  }
+
+  onClickSell(): void {
+    this.opType = "Sell";
+    this.operation = this.opType + " BTC/SGD"; // for now, let's just duplicate
   }
 
 }

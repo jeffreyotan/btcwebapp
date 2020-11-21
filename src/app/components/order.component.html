@@ -8,15 +8,26 @@
                 </mat-card-title>
             </mat-card-header>
             <mat-card-content>
-                <div fxLayout="row" fxLayoutAlign="end">
-                    <mat-form-field>
-                        <mat-label>Order Date</mat-label>
-                        <input matInput [matDatepicker]="orderDatePicker" formControlName="orderDate" [min]="today">
-                        <mat-datepicker-toggle matPrefix [for]="orderDatePicker"></mat-datepicker-toggle>
-                        <mat-datepicker #orderDatePicker></mat-datepicker>
-                    </mat-form-field>
+                <div fxLayout="row">
+                    <div fxFlex="50%" fxLayoutAlign="start">
+                        <div fxLayout="column">
+                            <mat-label>Order Type:</mat-label>
+                            <mat-radio-group formControlName="orderType" aria-label="Select an option" fxLayout="row" fxLayoutGap="1vw">
+                                <mat-radio-button value="Buy" (click)="onClickBuy()">Buy</mat-radio-button>
+                                <mat-radio-button value="Sell" (click)="onClickSell()">Sell</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                    </div>
+                    <div fxFlex="50%" fxLayoutAlign="end">
+                        <mat-form-field>
+                            <mat-label>Order Date</mat-label>
+                            <input matInput [matDatepicker]="orderDatePicker" formControlName="orderDate" [min]="today">
+                            <mat-datepicker-toggle matPrefix [for]="orderDatePicker"></mat-datepicker-toggle>
+                            <mat-datepicker #orderDatePicker></mat-datepicker>
+                        </mat-form-field>
+                    </div>
                 </div>
-                <div fxLayout="row" fxLayoutGap="2vw">
+                <div fxLayout="row" fxLayoutGap="5vw">
                     <mat-form-field>
                         <mat-label>Name</mat-label>
                         <input matInput formControlName="name">
@@ -31,6 +42,13 @@
                         <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
                         <mat-datepicker #dobPicker></mat-datepicker>
                     </mat-form-field>
+                    <div>
+                        <mat-label>Gender:</mat-label>
+                        <mat-radio-group formControlName="gender" aria-label="Select an option" fxLayout="row" fxLayoutGap="1vw">
+                            <mat-radio-button value="male">Male</mat-radio-button>
+                            <mat-radio-button value="female">Female</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
                 </div>
             </mat-card-content>
         </mat-card>

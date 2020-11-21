@@ -6,6 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatRadioModule } from '@angular/material/radio';
 
 const MATERIAL = [
     MatToolbarModule,
@@ -13,7 +14,8 @@ const MATERIAL = [
     MatFormFieldModule,
     MatCardModule,
     MatDividerModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatRadioModule
 ];
 
 @NgModule({

@@ -27,28 +27,61 @@
                         </mat-form-field>
                     </div>
                 </div>
-                <div fxLayout="row" fxLayoutGap="5vw">
-                    <mat-form-field>
-                        <mat-label>Name</mat-label>
-                        <input matInput formControlName="name">
-                    </mat-form-field>
-                    <mat-form-field>
-                        <mat-label>Contact No.</mat-label>
-                        <input matInput formControlName="phone">
-                    </mat-form-field>
-                    <mat-form-field>
-                        <mat-label>Date of Birth</mat-label>
-                        <input matInput [matDatepicker]="dobPicker" formControlName="dateOfBirth" [max]="today">
-                        <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
-                        <mat-datepicker #dobPicker></mat-datepicker>
-                    </mat-form-field>
-                    <div>
-                        <mat-label>Gender:</mat-label>
-                        <mat-radio-group formControlName="gender" aria-label="Select an option" fxLayout="row" fxLayoutGap="1vw">
-                            <mat-radio-button value="male">Male</mat-radio-button>
-                            <mat-radio-button value="female">Female</mat-radio-button>
-                        </mat-radio-group>
+                <div fxLayout="row">
+                    <div fxFlex="25%" fxLayoutAlign="start">
+                        <mat-form-field>
+                            <mat-label>Name</mat-label>
+                            <input matInput formControlName="name">
+                        </mat-form-field>
                     </div>
+                    <div fxFlex="25%" fxLayoutAlign="start">
+                        <mat-form-field>
+                            <mat-label>Contact No.</mat-label>
+                            <input matInput formControlName="phone">
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="50%" fxLayoutAlign="start"></div>
+                </div>
+                <div fxLayout="row">
+                    <div fxFlex="25%" fxLayoutAlign="start">
+                        <mat-form-field>
+                            <mat-label>Date of Birth</mat-label>
+                            <input matInput [matDatepicker]="dobPicker" formControlName="dateOfBirth" [max]="today">
+                            <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
+                            <mat-datepicker #dobPicker></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout="column" fxFlex="25%" fxLayoutAlign="start">
+                        <div>
+                            <mat-label>Gender:</mat-label>
+                            <mat-radio-group formControlName="gender" aria-label="Select an option" fxLayout="row" fxLayoutGap="1vw">
+                                <mat-radio-button value="male">Male</mat-radio-button>
+                                <mat-radio-button value="female">Female</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                    </div>
+                    <div fxFlex="50%" fxLayoutAlign="start"></div>
+                </div>
+                <mat-divider></mat-divider>
+                <div fxLayout="row">
+                    <h3>Order Details</h3>
+                </div>
+                <div fxLayout="row">
+                    <div fxFlex="25%" fxLayoutAlign="start">
+                        <mat-form-field>
+                            <mat-label>Order Unit</mat-label>
+                            <input matInput formControlName="orderUnit">
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout="column" fxFlex="25%" fxLayoutAlign="start">
+                        <div>
+                            <mat-label>Cryptocurrency Paid</mat-label>
+                            <mat-radio-group formControlName="cryptoPair" aria-label="Select an option" fxLayout="row" fxLayoutGap="1vw">
+                                <mat-radio-button value="BTCSGD" [checked]="true">BTC/SGD</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                    </div>
+                    <div fxFlex="50%" fxLayoutAlign="start"></div>
                 </div>
             </mat-card-content>
         </mat-card>

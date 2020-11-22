@@ -26,18 +26,23 @@ export class OrderComponent implements OnInit {
       phone: this.fb.control('', [ Validators.required, Validators.minLength(8), Validators.maxLength(16) ]),
       dateOfBirth: this.fb.control('', [ Validators.required ]),
       gender: this.fb.control('', [ Validators.requiredTrue ]),
-      orderType: this.fb.control('', [ Validators.requiredTrue ])
+      orderType: this.fb.control('', [ Validators.requiredTrue ]),
+      orderUnit: this.fb.control('', [ Validators.required ]),
+      cryptoPair: this.fb.control('', [ Validators.requiredTrue ])
     });
   }
 
   onClickBuy(): void {
-    this.opType = "Buy";
-    this.operation = this.opType + " BTC/SGD"; // for now, let's just duplicate
+    this.changeOperation("Buy");
   }
 
   onClickSell(): void {
-    this.opType = "Sell";
-    this.operation = this.opType + " BTC/SGD"; // for now, let's just duplicate
+    this.changeOperation("Sell");
+  }
+
+  changeOperation(newOp: string): void {
+    this.opType = newOp;
+    this.operation = this.opType + " BTC/SGD";
   }
 
 }
